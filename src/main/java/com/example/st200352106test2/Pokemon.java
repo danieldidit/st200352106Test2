@@ -24,7 +24,15 @@ public class Pokemon {
     }
 
     public void setName(String name) {
-        this.name = name;
+
+        // Trims white space from name variable
+        name = name.trim();
+
+        // Ensures the name is 4 or more characters long
+        if(name.matches("[A-Z][a-z][a-z][a-z][A-Za-z]*"))
+            this.name = name;
+        else
+            throw new IllegalArgumentException("Name must include at least 4 characters");
     }
 
     public String getGender() {
