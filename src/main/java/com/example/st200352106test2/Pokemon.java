@@ -104,4 +104,10 @@ public class Pokemon {
         else
             throw new IllegalArgumentException("The pokemon number must be between 1 and 999 inclusive");
     }
+
+    public String toString()
+    {
+        // Formats the toString so it always displays the pokemon number with three digits
+        return String.format("%03d-%s",pokemonNumber,name);
+    }
 }
