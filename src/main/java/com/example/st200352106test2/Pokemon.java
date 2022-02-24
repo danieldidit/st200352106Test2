@@ -84,7 +84,12 @@ public class Pokemon {
     }
 
     public void setDefense(int defense) {
-        this.defense = defense;
+
+        // Ensures defense is between 30 and 83 inclusive
+        if (defense >= 30 && defense <= 83)
+            this.defense = defense;
+        else
+            throw new IllegalArgumentException("Defense must be between 30 and 83 inclusive");
     }
 
     public int getPokemonNumber() {
