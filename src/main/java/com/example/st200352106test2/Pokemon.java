@@ -71,7 +71,12 @@ public class Pokemon {
     }
 
     public void setAttack(int attack) {
-        this.attack = attack;
+
+        // Ensures attack is between 30 and 90 inclusive
+        if (attack >= 30 && attack <= 90)
+            this.attack = attack;
+        else
+            throw new IllegalArgumentException("Attack must be between 30 and 90 inclusive");
     }
 
     public int getDefense() {
