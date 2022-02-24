@@ -64,6 +64,21 @@ public class Pokedex {
     }
 
     /**
+     * This method returns an array list of pokemon that have an attack equal to or greater than the minAttackValue
+     * @param minAttackValue is the argument that will be used to compare tot he array
+     * @return an array list of Pokemon that contain the same min attack value as the argument
+     */
+    public ArrayList<Pokemon> getPokemonWithAttackValue(int minAttackValue)
+    {
+        ArrayList<Pokemon> array = new ArrayList<>();
+        for (Pokemon pokemon : pokemon)
+            if (pokemon.getAttack() >= minAttackValue)
+                array.add(pokemon);
+
+        return array;
+    }
+
+    /**
      * Test class
      * @param args
      */
@@ -80,10 +95,21 @@ public class Pokedex {
         Pokemon pokemon9 = new Pokemon("Venusaur", "both",50,50,50,003);
         Pokemon pokemon10 = new Pokemon("Charmander", "both",30,40,30,004);
 
+        user.addPokemon(pokemon1);
+        user.addPokemon(pokemon2);
+        user.addPokemon(pokemon3);
+        user.addPokemon(pokemon4);
         user.addPokemon(pokemon5);
+        user.addPokemon(pokemon6);
+        user.addPokemon(pokemon7);
+        user.addPokemon(pokemon8);
+        user.addPokemon(pokemon9);
+        user.addPokemon(pokemon10);
 
 
         System.out.println(user.getPokemonWithGender("male"));
+
+        System.out.println(user.getPokemonWithAttackValue(40));
     }
 
 }
