@@ -18,6 +18,14 @@ public class Pokedex {
     }
 
     public void setOwnersName(String ownersName) {
-        this.ownersName = ownersName;
+
+        // Gets rid of leading and trailing white space
+        ownersName = ownersName.trim();
+
+        // Ensures the owners name is at least 3 characters in length
+        if(ownersName.matches("[A-Z][a-z][a-z][A-Za-z]*"))
+            this.ownersName = ownersName;
+        else
+            throw new IllegalArgumentException(" Owners name must beat least 3 characters in length");
     }
 }
