@@ -38,5 +38,13 @@ public class Pokedex {
         pokemon.add(newPokemon);
     }
 
+    /**
+     *
+     * @return the number of Pokemon in the Pokemon Index
+     */
+    public int getNumOfPokemon()
+    {
+        return pokemon.size();
+    }
 
 }
