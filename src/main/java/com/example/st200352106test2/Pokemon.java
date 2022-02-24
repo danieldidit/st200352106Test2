@@ -97,6 +97,11 @@ public class Pokemon {
     }
 
     public void setPokemonNumber(int pokemonNumber) {
-        this.pokemonNumber = pokemonNumber;
+
+        // Ensures the Pokemon number is between 1 and 999 inclusive
+        if (pokemonNumber >=1 && pokemonNumber <=999)
+            this.pokemonNumber = pokemonNumber;
+        else
+            throw new IllegalArgumentException("The pokemon number must be between 1 and 999 inclusive");
     }
 }
