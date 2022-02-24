@@ -1,5 +1,7 @@
 package com.example.st200352106test2;
 
+import java.util.Locale;
+
 public class Pokemon {
 
     private String name;
@@ -40,7 +42,15 @@ public class Pokemon {
     }
 
     public void setGender(String gender) {
-        this.gender = gender;
+
+        // Trims white space and makes all letters lowercase
+        gender = gender.trim().toLowerCase();
+
+        // Ensures gender is either male, female, both or unknown
+        if(gender.equals("male") || gender.equals("female") || gender.equals("both") || gender.equals("unknown"))
+            this.gender = gender;
+        else
+            throw new IllegalArgumentException("Gender must be male, female, both, or unknown");
     }
 
     public int getHp() {
