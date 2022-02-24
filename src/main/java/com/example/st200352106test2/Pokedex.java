@@ -28,4 +28,15 @@ public class Pokedex {
         else
             throw new IllegalArgumentException(" Owners name must beat least 3 characters in length");
     }
+
+    /**
+     *Adds a new pokemon to the pokemon array list
+     * @param newPokemon adds a new Pokemon object to the Pokemon Array List
+     */
+    public void addPokemon(Pokemon newPokemon)
+    {
+        pokemon.add(newPokemon);
+    }
+
+
 }
