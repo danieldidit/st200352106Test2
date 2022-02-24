@@ -58,7 +58,12 @@ public class Pokemon {
     }
 
     public void setHp(int hp) {
-        this.hp = hp;
+
+        // Ensures Hp is between 0 and 80 inclusive
+        if (hp >= 0 && hp <= 80)
+            this.hp = hp;
+        else
+            throw new IllegalArgumentException("Hp must be between 0 and 80 inclusive");
     }
 
     public int getAttack() {
